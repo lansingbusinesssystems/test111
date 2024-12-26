@@ -17,6 +17,8 @@ WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/dist ./dist
 COPY --from=builder /usr/src/app/package*.json ./
 
+RUN ls -R
+
 RUN npm install --only=production
 RUN npm install pm2 -g
 
